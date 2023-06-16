@@ -68,7 +68,7 @@ export class GitlabCIClient implements GitlabCIApi {
         };
     }
 
-    protected async callApi<T>(
+    async callApi<T>(
         path: string,
         query: { [key in string]: string }
     ): Promise<T | undefined> {
