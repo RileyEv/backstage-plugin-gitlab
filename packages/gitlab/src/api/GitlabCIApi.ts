@@ -24,6 +24,10 @@ export type GitlabCIBuilder = {
 };
 
 export type GitlabCIApi = {
+    callApi<T>(
+        path: string,
+        query: { [key in string]: string }
+    ): Promise<T | undefined>;
     getPipelineSummary(
         projectID: string | number
     ): Promise<PipelineSchema[] | undefined>;
